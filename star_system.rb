@@ -8,6 +8,9 @@ def initialize(name, planets)
 end
 
 
+def planet_names
+  @planets.map { |planet|  planet.name() }
+end
 
 
 
