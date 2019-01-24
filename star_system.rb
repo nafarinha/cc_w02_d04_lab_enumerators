@@ -32,11 +32,24 @@ end
 
 
 
-#@planets.max{ |planet| planet.diameter }
-#pets.max{ |pet| pet[:price] }
+# def get_smallest_planet
+# planet_min = 0
+# @planets.each{|planet| planet_min = planet if planet.diameter <= planet_min.diameter}
+# end
 
+def get_smallest_planet
 
+  diameter = 1_000_000
+  smallest_planet = 0
 
+  @planets.each do |planet|
+    if planet.diameter < diameter
+      diameter = planet.diameter
+      smallest_planet = planet
+    end
+  end
+  return smallest_planet
+end
 
 
 
